@@ -24,10 +24,12 @@ jobs:
       - name: Install pandoc and LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-latex-base texlive-xetex
+          sudo apt-get install -y pandoc texlive-latex-base texlive-xetex fonts-noto-cjk
       
       - name: Generate PDF
-        run: python3 .trae/config/generate_pdf.py
+        run: |
+          python3 .trae/config/convert_links.py
+          python3 .trae/config/generate_pdf.py
       
       - name: Create Release
         env:

@@ -21,7 +21,7 @@ echo "正在安装依赖..."
 
 # 安装 pandoc 和 LaTeX
 $PKG_MANAGER update
-$PKG_MANAGER install -y pandoc texlive-latex-base texlive-xetex
+$PKG_MANAGER install -y pandoc texlive-latex-base texlive-xetex fonts-noto-cjk
 
 echo ""
 echo "=========================================="

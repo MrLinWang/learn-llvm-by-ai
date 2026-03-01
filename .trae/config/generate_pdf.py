@@ -70,6 +70,7 @@ def generate_pdf(merged_content):
         temp_md,
         '-o', output_pdf,
         '--pdf-engine=xelatex',
+        '-V', 'mainfont=Noto Sans CJK SC',
         '-V', 'geometry:margin=1in',
         '--toc',
         '--number-sections'
