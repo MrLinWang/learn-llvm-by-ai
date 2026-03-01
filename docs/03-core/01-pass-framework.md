@@ -9,9 +9,9 @@
 LLVM 的 Pass 框架是编译器后端优化的核心基础设施。主要包含以下组件：
 
 **核心头文件**:
-- [llvm/include/llvm/IR/PassManager.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/IR/PassManager.h) - Pass 管理器接口
-- [llvm/include/llvm/Passes/PassBuilder.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Passes/PassBuilder.h) - Pass 构建器
-- [llvm/include/llvm/IR/LegacyPassManager.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/IR/LegacyPassManager.h) - 旧版 Pass 管理器
+- [📁 llvm/include/llvm/IR/PassManager.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/IR/PassManager.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/IR/PassManager.h) - Pass 管理器接口
+- [📁 llvm/include/llvm/Passes/PassBuilder.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Passes/PassBuilder.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Passes/PassBuilder.h) - Pass 构建器
+- [📁 llvm/include/llvm/IR/LegacyPassManager.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/IR/LegacyPassManager.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/IR/LegacyPassManager.h) - 旧版 Pass 管理器
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -72,9 +72,9 @@ LLVM 的 Pass 框架是编译器后端优化的核心基础设施。主要包含
 
 ### 2.1 指令组合 (InstCombine)
 
-**文件位置**: [llvm/lib/Transforms/InstCombine/InstructionCombining.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/InstCombine/InstructionCombining.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/InstCombine/InstCombine.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/InstCombine/InstCombine.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/InstCombine/InstCombine.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/InstCombine/InstCombine.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/InstCombine/InstCombine.h)
 
 **Pass 类**:
 - `InstCombinePass` (新 Pass 管理器)
@@ -109,9 +109,9 @@ InstCombine 是 LLVM 最基本也是最重要的优化 Pass 之一，通过反�
 
 ### 2.2 活跃变量分析 (GVN - Global Value Numbering)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/GVN.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/GVN.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/GVN.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/GVN.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/GVN.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/GVN.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/GVN.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/GVN.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/GVN.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/GVN.h)
 
 **Pass 类**: `GVNPass`
 
@@ -165,9 +165,9 @@ bb3:
 
 ### 2.3 死代码消除 (DCE - Dead Code Elimination)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/DCE.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/DCE.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/DCE.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/DCE.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/DCE.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/DCE.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/DCE.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/DCE.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/DCE.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/DCE.h)
 
 **Pass 类**: `DCEPass`
 
@@ -197,9 +197,9 @@ exit:
 
 ### 2.4 死存储消除 (DSE - Dead Store Elimination)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/DeadStoreElimination.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/DeadStoreElimination.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/DeadStoreElimination.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/DeadStoreElimination.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/DeadStoreElimination.h)
 
 **Pass 类**: `DSEPass`
 
@@ -221,9 +221,9 @@ store i32 20, ptr %a
 
 ### 2.5 简化控制流 (SimplifyCFG)
 
-**文件位置**: [llvm/lib/Transforms/Utils/SimplifyCFG.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/SimplifyCFG.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Utils/SimplifyCFG.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/SimplifyCFG.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Utils/SimplifyCFG.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/SimplifyCFG.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/SimplifyCFG.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/SimplifyCFG.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/SimplifyCFG.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/SimplifyCFG.h)
 
 **Pass 类**: `SimplifyCFGPass`
 
@@ -257,9 +257,9 @@ entry:
 
 ### 2.6 重新关联 (Reassociate)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/Reassociate.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/Reassociate.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/Reassociate.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/Reassociate.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/Reassociate.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/Reassociate.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/Reassociate.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/Reassociate.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/Reassociate.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/Reassociate.h)
 
 **Pass 类**: `ReassociatePass`
 
@@ -281,9 +281,9 @@ entry:
 
 ### 3.1 循环展开 (LoopUnroll)
 
-**文件位置**: [llvm/lib/Transforms/Utils/LoopUnroll.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/LoopUnroll.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Utils/LoopUnroll.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/LoopUnroll.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Utils/LoopUnroll.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/LoopUnrollPass.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopUnrollPass.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/LoopUnrollPass.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopUnrollPass.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopUnrollPass.h)
 - `llvm/lib/Transforms/Utils/LoopUnrollRuntime.cpp`
 
 **Pass 类**: `LoopUnrollPass`
@@ -312,9 +312,9 @@ if (i < 4) goto loop_start;
 
 ### 3.2 循环代码移动 (LICM - Loop Invariant Code Motion)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/LICM.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/LICM.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/LICM.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/LICM.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/LICM.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/LICM.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LICM.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/LICM.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LICM.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/LICM.h)
 
 **Pass 类**: `LICMPass`
 
@@ -339,9 +339,9 @@ for (i = 0; i < n; i++) {
 
 ### 3.3 循环向量化 (LoopVectorize)
 
-**文件位置**: [llvm/lib/Transforms/Vectorize/LoopVectorize.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Vectorize/LoopVectorize.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Vectorize/LoopVectorize.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Vectorize/LoopVectorize.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Vectorize/LoopVectorize.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Vectorize/LoopVectorize.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Vectorize/LoopVectorize.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Vectorize/LoopVectorize.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Vectorize/LoopVectorize.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Vectorize/LoopVectorize.h)
 
 **Pass 类**: `LoopVectorizePass`
 
@@ -366,7 +366,7 @@ for (i = 0; i < 1024; i += 4) {
 
 ### 3.4 循环简化 (LoopSimplify)
 
-**文件位置**: [llvm/lib/Transforms/Utils/LoopSimplify.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/LoopSimplify.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Utils/LoopSimplify.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Utils/LoopSimplify.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Utils/LoopSimplify.cpp)
 
 **Pass 类**: `LoopSimplify`
 
@@ -380,9 +380,9 @@ for (i = 0; i < 1024; i += 4) {
 
 ### 3.5 归纳变量简化 (IndVarSimplify)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/IndVarSimplify.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/IndVarSimplify.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/IndVarSimplify.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/IndVarSimplify.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/IndVarSimplify.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/IndVarSimplify.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/IndVarSimplify.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/IndVarSimplify.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/IndVarSimplify.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/IndVarSimplify.h)
 
 **Pass 类**: `IndVarSimplifyPass`
 
@@ -406,9 +406,9 @@ for (i = 0; i < n; i++) {
 
 ### 3.6 循环合并 (LoopFuse)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/LoopFuse.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/LoopFuse.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/LoopFuse.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/LoopFuse.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/LoopFuse.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/LoopFuse.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopFuse.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/LoopFuse.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopFuse.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/LoopFuse.h)
 
 **Pass 类**: `LoopFusePass`
 
@@ -435,9 +435,9 @@ for (i = 0; i < n; i++) {
 
 ### 4.1 SLP 向量化 (SLPVectorizer)
 
-**文件位置**: [llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Vectorize/SLPVectorizer.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Vectorize/SLPVectorizer.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Vectorize/SLPVectorizer.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Vectorize/SLPVectorizer.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Vectorize/SLPVectorizer.h)
 
 **Pass 类**: `SLPVectorizerPass`
 
@@ -486,7 +486,7 @@ vec4_store(&a, va);
 
 ### 5.1 早期公共子表达式消除 (EarlyCSE)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/EarlyCSE.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/EarlyCSE.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/EarlyCSE.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/EarlyCSE.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/EarlyCSE.cpp)
 
 **Pass 类**: `EarlyCSELegacyCommonPass`
 
@@ -497,7 +497,7 @@ vec4_store(&a, va);
 
 ### 5.2 条件传播 (CCP - Conditional Constant Propagation)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/SCCP.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/SCCP.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/SCCP.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/SCCP.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/SCCP.cpp)
 
 **Pass 类**: 包含在 SCCP (Sparse Conditional Constant Propagation)
 
@@ -519,7 +519,7 @@ x = 1;
 
 ### 5.3 相关值传播 (CVP - Correlated Value Propagation)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp)
 
 **Pass 类**: `CorrelatedValuePropagationPass`
 
@@ -530,9 +530,9 @@ x = 1;
 
 ### 5.4 常量提升 (ConstantHoisting)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/ConstantHoisting.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/ConstantHoisting.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/ConstantHoisting.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/ConstantHoisting.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/ConstantHoisting.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/ConstantHoisting.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/ConstantHoisting.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/ConstantHoisting.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/ConstantHoisting.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/ConstantHoisting.h)
 
 **Pass 类**: `ConstantHoistingPass`
 
@@ -570,7 +570,7 @@ next:
 
 ### 6.1 函数内联 (Inliner)
 
-**文件位置**: [llvm/lib/Transforms/IPO/ModuleInliner.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/IPO/ModuleInliner.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/IPO/ModuleInliner.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/IPO/ModuleInliner.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/IPO/ModuleInliner.cpp)
 
 **Pass 类**: `ModuleInlinerPass`
 
@@ -590,7 +590,7 @@ next:
 
 ### 6.3 内存优化 (SROA - Scalar Replacement of Aggregates)
 
-**文件位置**: [llvm/lib/Transforms/Scalar/SROA.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/SROA.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/SROA.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/SROA.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/SROA.cpp)
 
 **Pass 类**: `SROALegacyPass`
 
@@ -601,7 +601,7 @@ next:
 
 ### 6.4 激进指令组合 (AggressiveInstCombine)
 
-**文件位置**: [llvm/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/AggressiveInstCombine/AggressiveInstCombine.cpp)
 
 **Pass 类**: `AggressiveInstCombinePass`
 
@@ -612,9 +612,9 @@ next:
 
 ### 6.5 Jump Threading
 
-**文件位置**: [llvm/lib/Transforms/Scalar/JumpThreading.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/JumpThreading.cpp)
+**文件位置**: [📁 llvm/lib/Transforms/Scalar/JumpThreading.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/Scalar/JumpThreading.cpp) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/Scalar/JumpThreading.cpp)
 
-**头文件**: [llvm/include/llvm/Transforms/Scalar/JumpThreading.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/JumpThreading.h)
+**头文件**: [📁 llvm/include/llvm/Transforms/Scalar/JumpThreading.h](file:///root/learn-llvm-by-ai/llvm-project/llvm/include/llvm/Transforms/Scalar/JumpThreading.h) · [🌐 GitHub](https://github.com/MrLinWang/learn-llvm-by-ai/blob/main/llvm-project/llvm/include/llvm/Transforms/Scalar/JumpThreading.h)
 
 **Pass 类**: `JumpThreadingPass`
 

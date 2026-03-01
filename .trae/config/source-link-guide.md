@@ -2,39 +2,73 @@
 
 > 本文件为项目配置文档，不属于教程内容
 
-## 快速开始
+## 链接格式说明
 
-### 方法一：使用 VS Code 工作区（推荐）
+为了同时支持**本地 VS Code 学习**和**GitHub 网页浏览**，推荐使用双链接格式：
 
-1. 打开 VS Code
-2. 选择 `文件` → `打开工作区 from 文件...`
-3. 选择 `learn-llvm.code-workspace`
+```markdown
+[📁 源码](file:///root/learn-llvm-by-ai/llvm-project/xxx.cpp) · [🌐 GitHub](https://github.com/your-org/learn-llvm-by-ai/blob/main/llvm-project/xxx.cpp)
+```
 
-这将同时打开教程项目和 llvm-project 源码。
-
-### 方法二：手动配置源码跳转
-
-在 VS Code 中添加源码文件夹：
-
-1. `文件` → `将文件夹添加到工作区`
-2. 选择 `llvm-project` 文件夹
+**效果展示**：
+- 📁 源码 - 在 VS Code 中点击直接跳转本地文件
+- 🌐 GitHub - 在浏览器中点击跳转到 GitHub 仓库
 
 ---
 
-## 源码链接格式
+## 快速开始
 
-在教程文档中使用以下格式创建可点击的源码链接：
+### 方法一：手动编写双链接
 
-### 格式说明
+在编写文档时，直接使用双链接格式：
 
 ```markdown
-[源文件名](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp#L100-L120)
+## InstCombine Pass
+
+[📁 源码](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp#L1-L50) · [🌐 GitHub](https://github.com/your-org/learn-llvm-by-ai/blob/main/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp#L1-L50)
 ```
 
-**链接结构**:
-- `file:///root/learn-llvm-by-ai/llvm-project/` - 源码根目录
-- `llvm/lib/Transforms/...` - 相对于 llvm-project 的路径
-- `#L100-L120` - 跳转到指定行号
+### 方法二：使用脚本批量转换
+
+如果已有单链接文档，可以使用脚本批量转换：
+
+```bash
+# 先配置脚本中的 GitHub 仓库信息
+# 编辑 .trae/config/convert_links.py 修改:
+#   GITHUB_ORG = "your-org"
+#   GITHUB_REPO = "learn-llvm-by-ai"
+
+# 运行转换脚本
+python3 .trae/config/convert_links.py
+```
+
+---
+
+## 链接格式规则
+
+### 本地链接格式
+```
+file:///root/learn-llvm-by-ai/llvm-project/{相对路径}#L{行号}
+```
+
+### GitHub 链接格式
+```
+https://github.com/{org}/{repo}/blob/main/llvm-project/{相对路径}#L{行号}
+```
+
+### 行号格式
+- 单行: `#L100`
+- 多行: `#L100-L150`
+
+---
+
+## 当前使用说明
+
+### 在本地 VS Code 中
+- 点击 **📁 源码** 链接可以直接跳转到本地对应文件和行号
+
+### 在 GitHub 网页上
+- 点击 **🌐 GitHub** 链接可以直接跳转到 GitHub 仓库对应文件和行号
 
 ---
 
@@ -56,47 +90,24 @@
 | DCE | `llvm/lib/Transforms/Scalar/DCE.cpp` |
 | DSE | `llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp` |
 | SimplifyCFG | `llvm/lib/Transforms/Utils/SimplifyCFG.cpp` |
-| Reassociate | `llvm/lib/Transforms/Scalar/Reassociate.cpp` |
 | LICM | `llvm/lib/Transforms/Scalar/LICM.cpp` |
 | LoopUnroll | `llvm/lib/Transforms/Utils/LoopUnroll.cpp` |
 | LoopVectorize | `llvm/lib/Transforms/Vectorize/LoopVectorize.cpp` |
 | SLPVectorizer | `llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp` |
 
----
+### 调度相关文件
 
-## 使用示例
-
-在 markdown 文档中添加链接：
-
-```markdown
-## InstCombine Pass
-
-InstCombine 是 LLVM 最基本的优化 Pass，位于 [InstructionCombining.cpp](file:///root/learn-llvm-by-ai/llvm-project/llvm/lib/Transforms/InstCombine/InstructionCombining.cpp#L1-L50)。
-
-核心逻辑在 `visitAdd` 函数中：
-```cpp
-// 源码分析
-Value *visitAdd(BinaryOperator &I) {
-  // 优化逻辑...
-}
-```
-```
+| 功能 | 源码路径 |
+|------|---------|
+| MachineScheduler | `llvm/lib/CodeGen/MachineScheduler.cpp` |
+| PostRA Scheduler | `llvm/lib/CodeGen/PostRASchedulerList.cpp` |
+| 调度模型定义 | `llvm/include/llvm/Target/TargetSchedule.td` |
+| XiangShan调度 | `llvm/lib/Target/RISCV/RISCVSchedXiangShanNanHu.td` |
 
 ---
 
-## 推荐的源码阅读技巧
+## 注意事项
 
-1. **从入口点开始**: 找到 Pass 的 `run` 方法
-2. **搜索关键函数**: 如 `visitXXX`（访问者模式）
-3. **使用符号跳转**: `Ctrl+点击` 跳转，`Alt+←` 返回
-4. **大纲视图**: 左侧边栏查看文件结构
-
----
-
-## 扩展推荐
-
-安装以下 VS Code 扩展提升体验：
-
-- **vscode-llvm**: LLVM 语法高亮和工具集成
-- **C/C++**: IntelliSense 和代码导航
-- **Markdown All in One**: Markdown 预览和导航
+1. **GitHub 仓库配置**: 使用脚本前请先修改 `convert_links.py` 中的 `GITHUB_ORG` 和 `GITHUB_REPO` 变量
+2. **分支名称**: 默认使用 `main` 分支，如使用 `master` 请修改 `GITHUB_BRANCH` 变量
+3. **路径一致性**: 脚本会自动处理本地路径和 GitHub 路径的转换
