@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"name": "LLVM Learn Tutorial",
+			"path": "."
+		},
+		{
+			"name": "LLVM Project (源码)",
+			"path": "llvm-project"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.md": "markdown",
+			"*.ll": "llvm"
+		},
+		"markdown.preview.openMarkdownLinks": "inPreview",
+		"editor.links": true,
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": false
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"llvm-vs-code-extensions.vscode-llvm",
+			"ms-vscode.cpptools",
+			"yzhang.markdown-all-in-one"
+		]
+	}
+}
